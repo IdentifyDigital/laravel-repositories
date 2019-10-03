@@ -1,0 +1,22 @@
+{
+  "name": "identifydigital/laravel-repositories",
+  "authors": [
+    {
+      "name": "Josh Thackeray",
+      "email": "josh@identifywebdesign.co.uk"
+    }
+  ],
+  "minimum-stability": "dev",
+  "extra": {
+    "laravel": {
+      "providers": [
+        "IdentifyDigital\\Repositories\\RepositoriesServiceProvider"
+      ]
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "IdentifyDigital\\Repositories\\": "src/"
+    }
+  }
+}
