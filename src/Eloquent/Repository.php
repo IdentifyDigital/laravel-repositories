@@ -3,6 +3,7 @@
 namespace IdentifyDigital\Repositories;
 
 use Illuminate\Container\Container;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 use IdentifyDigital\Repositories\Criteria\BaseCriteria;
@@ -171,12 +172,17 @@ abstract class Repository implements RepositoryInterface, CriteriaInterface
     /**
      * Returns the query builder from the current repository model.
      *
-     * @return \Illuminate\Database\Eloquent\Builder
+     * @return Builder
      */
     public function builder()
     {
         $this->applyCriteria();
 
+        //If we already have an instance of teh query builder, we'll return this alone.
+        if($this->model instanceof Builder)
+            return $this->model;
+
+        //Else lets initiate a query builder on the model.
         return $this->model->query();
     }
 
