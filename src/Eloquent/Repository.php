@@ -74,6 +74,7 @@ abstract class Repository implements RepositoryInterface, CriteriaInterface
      */
     public function resetScope() {
         $this->skipCriteria(false);
+        $this->criteria = collect();
         $this->makeModel();
         return $this;
     }
