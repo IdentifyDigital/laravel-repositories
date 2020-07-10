@@ -301,7 +301,6 @@ abstract class Repository implements RepositoryInterface, CriteriaInterface
      * @param array $columns
      * @return \Illuminate\Database\Eloquent\Collection
      */
-
     public function findWhereNotIn($field, array $values, $columns = array('*'))
     {
         $this->applyCriteria();
