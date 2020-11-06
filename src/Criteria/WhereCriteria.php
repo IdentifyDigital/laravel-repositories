@@ -2,6 +2,7 @@
 
 namespace IdentifyDigital\Repositories\Criteria;
 
+use Closure;
 use IdentifyDigital\Repositories\Repository;
 
 class WhereCriteria extends BaseCriteria
@@ -44,6 +45,9 @@ class WhereCriteria extends BaseCriteria
      */
     public  function apply($model, Repository $repository)
     {
+        if($this->field instanceof Closure)
+            return $model->where($this->field);
+
         return $model->where($this->field, $this->operator, $this->value);
     }
 }
