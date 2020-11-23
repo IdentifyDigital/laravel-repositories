@@ -1,12 +1,12 @@
 <?php
 
-namespace IdentifyDigital\Repositories;
+namespace IdentifyDigital\Repositories\Eloquent;
 
 use IdentifyDigital\Repositories\Criteria\BaseCriteria;
 use IdentifyDigital\Repositories\Exceptions\RepositoriesException;
 use Illuminate\Database\Eloquent\Builder;
 
-interface RepositoryInterface
+interface EloquentRepositoryInterface
 {
     /**
      * Resets the criteria scope for working on fresh instances.

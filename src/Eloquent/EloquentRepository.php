@@ -1,6 +1,6 @@
 <?php
 
-namespace IdentifyDigital\Repositories;
+namespace IdentifyDigital\Repositories\Eloquent;
 
 use Illuminate\Container\Container;
 use Illuminate\Database\Eloquent\Builder;
@@ -10,7 +10,7 @@ use IdentifyDigital\Repositories\Criteria\BaseCriteria;
 use IdentifyDigital\Repositories\Criteria\CriteriaInterface;
 use IdentifyDigital\Repositories\Exceptions\RepositoriesException;
 
-abstract class Repository implements RepositoryInterface, CriteriaInterface
+abstract class EloquentRepository implements EloquentRepositoryInterface, CriteriaInterface
 {
     /**
      * @var Collection
